@@ -40,7 +40,7 @@ const getGrades = (schoolId) => {
     });
 };
 
-//Dustin has an 83% in the class
+//Promise version
 const getStatus = (userId) => {
     let user;
     return getUser(userId).then((tempUser) => {
@@ -58,8 +58,7 @@ const getStatus = (userId) => {
     });
 };
 
-//async await
-
+//Async-Await version
 const getStatusAlt = async (userId) => {
     const user = await getUser(userId);
     const grades = await getGrades(user.schoolId);
